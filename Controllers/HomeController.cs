@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using AWS_SistemaPracticas.Models;
+using MvcAppAws_Daniel_delaCruz.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AWS_SistemaPracticas.Controllers
+namespace MvcAppAws_Daniel_delaCruz.Controllers
 {
     public class HomeController : Controller
     {

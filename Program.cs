@@ -1,10 +1,17 @@
-namespace AWS_SistemaPracticas
+using Microsoft.EntityFrameworkCore;
+
+namespace MvcAppAws_Daniel_delaCruz
 {
     public class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            //añadir dbContext y sqlserver
+            builder.Services.AddDbContext<Context.AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

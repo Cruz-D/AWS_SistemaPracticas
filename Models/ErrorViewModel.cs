@@ -1,4 +1,4 @@
-namespace AWS_SistemaPracticas.Models
+namespace MvcAppAws_Daniel_delaCruz.Models
 {
     public class ErrorViewModel
     {
