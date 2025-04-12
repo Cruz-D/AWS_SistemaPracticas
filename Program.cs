@@ -1,20 +1,34 @@
 using Microsoft.EntityFrameworkCore;
+using MvcAppAws_Daniel_delaCruz.Services;
+using Amazon.SecretsManager;
+using MvcAppAws_Daniel_delaCruz.Context;
+using MvcAppAws_Daniel_delaCruz.Models;
 
 namespace MvcAppAws_Daniel_delaCruz
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            //añadir dbContext y sqlserver
-            builder.Services.AddDbContext<Context.AppDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
+          
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //GESTION DEL SECRETO
+            builder.Services.AddSingleton<SecretManagerService>();
+
+            var config = builder.Configuration;
+
+            var secretService = new SecretManagerService(config);
+            string secretName = "";
+            string connectionString = await secretService.GetSecretValuesAsync(secretName);
+
+
+            //añadir dbContext y sqlserver
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(connectionString));
 
             var app = builder.Build();
 
@@ -31,7 +45,7 @@ namespace MvcAppAws_Daniel_delaCruz
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthorization(); 
 
             app.MapControllerRoute(
                 name: "default",

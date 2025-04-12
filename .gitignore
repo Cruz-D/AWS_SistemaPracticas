@@ -1,1 +1,16 @@
-.vs
+# Archivo: .gitignore
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configuraci�n de la aplicaci�n
+appsettings.json
+appsettings.Development.json
+
+# Archivos de entorno
+.env
+appsettings.json
+appsettings.json

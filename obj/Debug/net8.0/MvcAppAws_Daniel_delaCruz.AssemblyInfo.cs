@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MvcAppAws_Daniel_delaCruz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2d3aa5c342f32f554e153bd947fae70d0360ddd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b2b7c95da0d4d814aefdb0a141b5acf74b2c7da")]
 [assembly: System.Reflection.AssemblyProductAttribute("MvcAppAws_Daniel_delaCruz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MvcAppAws_Daniel_delaCruz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
